@@ -163,7 +163,7 @@ namespace SCPCosmetics.Cosmetics.Pets
                 SpawnedPet.RankColor = Color;
             }
 
-            Round.IgnoredPlayers.Add(SpawnedPet.ReferenceHub);
+            Round.IgnoredPlayers.Add(Player.Get(SpawnedPet.ReferenceHub));
 
             PetComponent petComponent = target.GameObject.AddComponent<PetComponent>();
             petComponent.PetNPC = SpawnedPet;

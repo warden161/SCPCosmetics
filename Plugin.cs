@@ -13,8 +13,9 @@
     public class Plugin : Plugin<Config.Config>
     {
         public override string Name => "SCPCosmetics";
+        //dont care
         public override string Author => "creepycats";
-        public override Version Version => new(2, 0, 1);
+        public override Version Version => new(3, 0, 0);
 
         public static Plugin Instance { get; set; }
 
