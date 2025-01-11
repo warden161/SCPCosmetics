@@ -163,7 +163,7 @@ namespace SCPCosmetics.Cosmetics.Pets
                 SpawnedPet.RankColor = Color;
             }
 
-            Round.IgnoredPlayers.Add(Player.Get(SpawnedPet.ReferenceHub));
+            Round.IgnoredPlayers.Add(SpawnedPet.ReferenceHub);
 
             PetComponent petComponent = target.GameObject.AddComponent<PetComponent>();
             petComponent.PetNPC = SpawnedPet;
@@ -183,10 +183,7 @@ namespace SCPCosmetics.Cosmetics.Pets
         public static Npc SpawnFix(string name, RoleTypeId role, int id = 0, Vector3? position = null)
         {
             GameObject gameObject = UnityEngine.Object.Instantiate(NetworkManager.singleton.playerPrefab);
-            Npc npc = new(gameObject)
-            {
-                IsNPC = true
-            };
+            Npc npc = new(gameObject);
             try
             {
                 npc.ReferenceHub.roleManager.InitializeNewRole(RoleTypeId.None, RoleChangeReason.None);
